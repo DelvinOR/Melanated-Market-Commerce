@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .filterItem{
+        margin-right: 45px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 28%;
+        /*display: none;*/
+    }
+    .container{
+        margin-top: 15px;
+        overflow: scroll;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /*Style the buttons*/
+    .btn{
+        border:none;
+        outline:none;
+        padding:10px 12px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .btn:Hover{
+        background-color:darkorange;
+    }
+    .btn.active{
+        background-color: #555;
+        color:white;
+    }
+</style>
+<body>
+    <h2 style = "color:darkorange;text-align:center">A site dedicated to helping you</h2>
+    <div style = "text-align:center">
+        Click
+        <a href = "kingofintensity.com"> here </a> to check out our company website for KingOfIntensity LLC. This is our e-commerce site for selling health and beauty products.</br> </br>
+        <p style = "text-align:left">While on this website, take the time to care for your health and beauty. Browse through our products below!</p>
+    </div>
+    <div id="btnContainer">
+        <button class = "btn active" onClick = "filterSelection('all')">All</button>
+        <button class = "btn" onClick = "filterS
+        lection('d')">Price Highest to Lowest</button>
+        <button class = "btn" onClick = "filterSelection('a')">Price Lowest to Highest</button>
+    </div>
+
+    <div class = "container">
+            <div class = "filterItem 20" id = "1"> 
+                    <a href = "#" target = "_blank">
+                        <img src = "https://www.crushpixel.com/big-static12/preview4/alternative-medicine-homeopathic-substance-bottle-1009757.jpg" alt="picture example of product" width = "250" height = "325">
+                        <p>Product description</p>
+                    </a>
+                    <div>$20.00</div>
+            </div>
+            <div class = "filterItem 30" id = "2"> 
+                    <a href = "#" target = "_blank"> 
+                        <img src = "https://www.crushpixel.com/big-static12/preview4/alternative-medicine-homeopathic-substance-bottle-1009757.jpg" alt="picture example of product" width = "250" height = "325">
+                        <p>Product description</p>
+                    </a>
+                    <div>$30.00</div>
+            </div>
+            <div class = "filterItem 40" id = "3"> 
+                    <a href = "#" target = "_blank"> 
+                        <img src = "https://www.crushpixel.com/big-static12/preview4/alternative-medicine-homeopathic-substance-bottle-1009757.jpg" alt="picture example of product" width = "250" height = "325">
+                        <p>Product description</p>
+                    </a>
+                    <div>$40.00</div>       
+            </div>
+
+            <div class = "filterItem 50" id = "4"> 
+                    <a href = "#" target = "_blank"> 
+                        <img src = "https://www.crushpixel.com/big-static12/preview4/alternative-medicine-homeopathic-substance-bottle-1009757.jpg" alt="picture example of product" width = "250" height = "325">
+                        <p>Product description</p>
+                    </a>
+                    <div>$50.00</div>
+            </div>
+            <div class = "filterItem 60" id = "5"> 
+                    <a href = "#" target = "_blank"> 
+                        <img src = "https://www.crushpixel.com/big-static12/preview4/alternative-medicine-homeopathic-substance-bottle-1009757.jpg" alt="picture example of product" width = "250" height = "325">
+                        <p>Product description</p>
+                    </a>
+                    <div>$60.00</div>
+            </div>
+    </div>
+    <script>
+        var totalProducts = 5;
+
+        filterSelection('all');
+        function filterSelection(c){
+            if(c == 'all'){
+                arrangeCustom();
+            }else if(c == 'd'){
+                arrangeDescending();
+            }else{
+                arrangeAscending();
+            }
+        }
+
+        function arrangeDescending(){
+            for(let i = 1; i < totalProducts + 1; i++){
+                document.getElementById(i.toString()).style.order = (totalProducts - i).toString();
+            }
+        }
+
+        function arrangeAscending(){
+            for(let i = 1; i < totalProducts + 1; i++){
+                document.getElementById(i.toString()).style.order = i.toString();
+            }
+        }
+
+        // When a person clicks the "All" button, this function will help us arrange the product listings in our custom way
+        // either by popularity or random
+        function arrangeCustom(){
+            document.getElementById("1").style.order = "3";
+            document.getElementById("2").style.order = "2";
+            document.getElementById("3").style.order = "5";
+            document.getElementById("4").style.order = "4";
+            document.getElementById("5").style.order = "1";
+        }
+        
+        // when a button is clicked, we highlight that button
+        var btnContainer = document.getElementById('btnContainer');
+        var btns = btnContainer.getElementsByClassName("btn");
+        for(var i = 0; i < btns.length; i++){
+            btns[i].addEventListener("click", function(){
+                var curr = document.getElementsByClassName("active");
+                curr[0].className = curr[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+</body>
+<!--
+    The filterSelection has been implemented
+    What is left:
+        - Find correct images for the medicine
+        - Find a way to custom arrange the products in the arrangeCustom() method
+-->
+</html>
