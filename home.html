@@ -25,22 +25,11 @@
         margin: auto;
     }
 
-    /*Next and Prev buttons*/
-
-    /*Number slide text*/
-    .number-text {
-        color: #717171;
-        font-size: 80%;
-        padding: 5% 8%;
-        position: absolute;
-        top: 0;
-    }
-
     /*dots/bullets*/
     .dot {
         cursor: pointer;
-        height: 2%;
-        width: 1%;
+        height: 15px;
+        width: 15px;
         margin: 0 1%;
         background-color: #bbb;
         border-radius: 50%;
@@ -81,10 +70,14 @@
     }
 
     /*for mobile devices*/
-    @media only screen and (max-width: 100%) {
+    @media only screen and (max-width: 720px) {
 
-        .number-text {
-            font-size: 90%
+        #first-pic {
+            width: 100%;
+        }
+
+        #second-pic {
+            width: 100%;
         }
     }
 </style>
@@ -100,20 +93,14 @@
 
         <div class="slide-container">
             <div class="myPics fade">
-                <a href="https://www.kingofintensity.com" target="_blank"> <img
-                        style="margin-left:auto; margin-right:auto;"
-                        src="https://media.istockphoto.com/photos/young-african-woman-smiling-at-sunset-picture-id969233490?k=6&m=969233490&s=612x612&w=0&h=3UW-GHQ2CksIelqKk0UKgy_7qExPsn1g8B2Q0zzU1xo="
-                        alt="picture representing happiness"></a>
-            </div>
-            <div class="myPics fade">
                 <a href="https://www.melanatedmarketcommerce.org/store/p9/King_T-Shirt.html#/" target="_blank"> <img
-                        style="margin-left:auto; margin-right:auto;"
+                        id="first-pic" style="margin-left:auto; margin-right:auto;"
                         src="https://scontent-lga3-2.xx.fbcdn.net/v/t1.15752-9/132805652_215110886884077_6625919356433362207_n.png?_nc_cat=109&ccb=2&_nc_sid=ae9488&_nc_ohc=FbzSHXULPnUAX_yMrMG&_nc_ht=scontent-lga3-2.xx&oh=116e2256d6a935abc9fd0befa5feab9d&oe=602BB42A"
                         alt="King T-shirt"></a>
             </div>
             <div class="myPics fade">
                 <a href="https://www.melanatedmarketcommerce.org/store/p10/Juice_Fresh.html#/" target="_blank"> <img
-                        style="margin-left:auto; margin-right:auto;"
+                        id="second-pic" style="margin-left:auto; margin-right:auto;"
                         src="https://scontent-lga3-2.xx.fbcdn.net/v/t1.15752-9/133131816_1255180644875624_6860634618858064391_n.png?_nc_cat=102&ccb=2&_nc_sid=ae9488&_nc_ohc=9Akq3bj168kAX_9e33A&_nc_ht=scontent-lga3-2.xx&oh=32d9348df4996728a919edd6d106daf3&oe=602C4448"
                         alt="King Juice Drink"></a>
             </div>
@@ -121,7 +108,7 @@
         </br>
         <!--Dots-->
         <div style="text-align:center">
-            <span class="dot"></span>
+            <!--<span class="dot"></span>-->
             <span class="dot"></span>
             <span class="dot"></span>
         </div>
@@ -155,7 +142,7 @@
             }
             pictures[slidingIndex - 1].style.display = "block";
             dots[slidingIndex - 1].className += " active";
-            setTimeout(showPics, 2000); // Change image every 2 seconds
+            setTimeout(showPics, 4000); // Change image every 2 seconds
         }
     </script>
 </body>
