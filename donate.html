@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
+    .btn {
+        border: none;
+        outline: none;
+        padding: 12px 16px;
+        background-color: darkorange;
+        cursor: pointer;
+    }
+
     @media only screen and (max-width: 720px) {
         #project-int {
             width: 100%;
@@ -60,7 +68,10 @@
         One of those organizations is the ECHO Institute™ from The University of New Mexico. We partnered with this
         prestigious group with the aim to democratize health knowledge so that underserved communities could be more
         informed and receive proper treatment before it is too late. We are constantly growing our health team and
-        ready to assist the community.
+        ready to assist the community. To learn more about Project ECHO and about the work that The Univeristy of
+        New Mexico is doing visit their <a href="https://hsc.unm.edu/echo/" target="_blank">website</a>. You can also
+        view all the current active ECHO Hub centers by clicking
+        <a href="https://hsc.unm.edu/echo/data-marketplace/interactive-dashboards/" target="_blank">here</a>.
     </p>
 
     <p style="
@@ -77,13 +88,21 @@
         font-family: Arial, sans-serif;
         font-size: 110%;
         font-weight: bold;
+        color:black;
     ">
-        <a href="https://fundly.com/project-intensity" target="_blank">Donate Here</a>
+        <button class="btn" onClick="donate()">
+            Donate
+        </button>
     </p>
 
     <hr>
     <br>
 
 </body>
+<script>
+    function donate() {
+        window.open("https://fundly.com/project-intensity", "_blank");
+    }
+</script>
 
 </html>
