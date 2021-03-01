@@ -90,7 +90,7 @@
         font-weight: bold;
         color:black;
     ">
-        <button class="btn" onClick="donate()">
+        <button id="donate-btn" class="btn" onClick="donate()">
             Donate
         </button>
     </p>
@@ -98,11 +98,17 @@
     <hr>
     <br>
 
+    <script>
+        var btn = document.getElementById("donate-btn");
+        function donate() {
+            if (btn.innerHTML == "Donate") {
+                btn.innerHTML = "Thank you!";
+            } else {
+                btn.innerHTML = "Donate";
+            }
+            window.open("https://fundly.com/project-intensity", "_blank");
+        }
+    </script>
 </body>
-<script>
-    function donate() {
-        window.open("https://fundly.com/project-intensity", "_blank");
-    }
-</script>
 
 </html>
