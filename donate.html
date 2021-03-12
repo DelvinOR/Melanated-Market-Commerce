@@ -46,10 +46,10 @@
         font-family: Arial, sans-serif;
         font-size: 110%;
     ">
-        Our company, King Of Intensity LLC, is hosting a non-profit fundraiser campaign to assist impoverished
+        Our company, King of Intensity LLC, is hosting a non-profit fundraiser campaign to assist impoverished
         communities who have been severely impacted by COVID-19 and Human Rights violations. The name is
-        <a href="https://www.kingofintensity.com/donate" target="_blank">Project Intensity</a> and we are closely
-        working with universities such as Rutgers The State University of New Jersey and health organizations to make
+        <a href="https://www.kingofintensity.com/donate" target="_blank">Project Intensity</a> and we are working
+        closely with universities such as Rutgers The State University of New Jersey and health organizations to make
         this happen.
     </p>
 
@@ -101,12 +101,12 @@
     <br>
 
     <script>
-        var btn = document.getElementById("donate-btn");
         function donate() {
-            if (btn.innerHTML == "Donate") {
-                btn.innerHTML = "Thank you!";
+            var text = document.getElementById("donate-btn").firstChild;
+            if (text.data == "Donate") {
+                text.data = "Thank you!";
             } else {
-                btn.innerHTML = "Donate";
+                text.data = "Donate";
             }
             window.open("https://fundly.com/project-intensity", "_blank");
         }
